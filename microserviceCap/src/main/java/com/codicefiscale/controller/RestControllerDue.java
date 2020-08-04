@@ -44,7 +44,7 @@ public class RestControllerDue {
 	
 	@RequestMapping(value="/insertPaziente", method = RequestMethod.POST)
 	public ResponseEntity<JsonResponseBody> moltiMolti(Paziente paziente,BindingResult bindingResult){
-			log.info("==****==SONO DENTRO A MOLTI MOLTI==****==");
+			log.info("==****==SONO DENTRO A MOLTI  MOLTI==****==");
 			
 			if (bindingResult.hasErrors()) {
 				log.info("******NO BUONO******");
