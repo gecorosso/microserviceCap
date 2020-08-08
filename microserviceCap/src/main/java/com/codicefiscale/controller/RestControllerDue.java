@@ -50,6 +50,7 @@ public class RestControllerDue {
 				log.info("******NO BUONO******");
 				return ResponseEntity.status(HttpStatus.FORBIDDEN).body(new JsonResponseBody(
 						HttpStatus.FORBIDDEN.value(), bindingResult.getAllErrors().get(0).getCode()));
+			
 			}
 			
 			Paziente app = pazienteService.savePaziente(paziente);
