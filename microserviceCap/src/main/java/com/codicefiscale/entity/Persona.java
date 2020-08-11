@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.codicefiscale.dto.PersonaDto;
+
 import java.sql.Timestamp;
 
 import javax.persistence.*;
@@ -14,6 +16,14 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Persona {
+	
+	public Persona(PersonaDto dto) {
+		this.nome=dto.getNome();
+		this.cognome=dto.getCognome();
+		this.eta=dto.getEta();
+	}
+	
+	
 	@Id
 	@GeneratedValue
 	@Getter @Setter
@@ -31,7 +41,5 @@ public class Persona {
     
 	@Getter @Setter
 	private String eta;
-	
-	
 	
 }

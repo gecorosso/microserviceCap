@@ -15,7 +15,6 @@ public class PersonaServiceImpl implements PersonaService{
 	
 	@Autowired PersonaDao personaDao;
 	
-	
 	@Override
 	public List<Persona> getAllPersone() throws EntityNotFoundException {	
 		return personaDao.findAll();

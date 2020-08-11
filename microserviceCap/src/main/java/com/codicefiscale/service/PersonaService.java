@@ -3,6 +3,7 @@ package com.codicefiscale.service;
 import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
+
 import com.codicefiscale.entity.Persona;
 
 public interface PersonaService {
