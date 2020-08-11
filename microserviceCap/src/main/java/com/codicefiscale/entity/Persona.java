@@ -1,6 +1,11 @@
 package com.codicefiscale.entity;
 
 import javax.persistence.Entity;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.sql.Timestamp;
+
 import javax.persistence.*;
 import lombok.*;
 
@@ -13,6 +18,10 @@ public class Persona {
 	@GeneratedValue
 	@Getter @Setter
 	private Long persona_id;
+	
+	@Getter @Setter
+	@CreationTimestamp
+	Timestamp data_inserimento;
 	
 	@Getter @Setter
 	private String nome;
