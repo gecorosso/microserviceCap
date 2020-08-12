@@ -15,10 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.codicefiscale.entity.Dottore;
 import com.codicefiscale.entity.Paziente;
-import com.codicefiscale.entity.Persona;
 import com.codicefiscale.service.DottoreService;
 import com.codicefiscale.service.PazienteService;
-import com.codicefiscale.service.PersonaService;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,7 +32,7 @@ public class RestControllerDue {
 	
 	@Autowired PazienteService pazienteService;
 	@Autowired DottoreService dottoreService;
-	@Autowired PersonaService personaService;
+	
 	
 	@AllArgsConstructor
 	public class JsonResponseBody{
@@ -44,19 +42,8 @@ public class RestControllerDue {
 		private Object response;
 	}
 	
-	@RequestMapping(value="/insertPersona", method=RequestMethod.POST)
-	public ResponseEntity<JsonResponseBody> insertPersona (Persona persona,BindingResult bindingResult){
-		
-		
-		log.info("**Dentro a persona Service**");
-		if(bindingResult.hasErrors()) {
-			return ResponseEntity.status(HttpStatus.FORBIDDEN).body
-					(new JsonResponseBody(HttpStatus.FORBIDDEN.value(),bindingResult.getAllErrors().get(0).getCode()));
-		}
-		
-		Persona app = personaService.postPersona(persona);		
-		return ResponseEntity.status(HttpStatus.OK).body(new JsonResponseBody(HttpStatus.OK.value(), app));
-	}
+	
+	
 	
 	@RequestMapping(value="/insertPaziente", method = RequestMethod.POST)
 	public ResponseEntity<JsonResponseBody> moltiMolti(Paziente paziente,BindingResult bindingResult){
